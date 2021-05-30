@@ -13,14 +13,6 @@ $ca->addToBreadCrumb('iran.php', 'آی پی غیرمجاز');
 $ca->initPage();
 $ca->assign('variablename', $value);
 
-if ($ca->isLoggedIn()) {
-  $result = mysql_query("SELECT firstname FROM tblclients WHERE id=" . $ca->getUserID());
-  $data = mysql_fetch_array($result);
-  $clientname = $data[0];
-  $ca->assign('clientname', $clientname);
-} else {
-}
-
 $ca->setTemplate('iran');
 
 $ca->output();
